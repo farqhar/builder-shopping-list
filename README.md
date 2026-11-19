@@ -62,13 +62,14 @@ Don't recognise a word? Look it up in the [glossary](glossary.md).
 
 | Guide | What it explains | Status |
 | --- | --- | --- |
-| [Auth by app type](guides/README.md) | How login works for websites, mobile apps, B2B SaaS, marketplaces and APIs | 🚧 In progress |
+| [Auth by app type](guides/auth-by-app-type.md) | How login works for websites, mobile apps, B2B SaaS, marketplaces, internal tools, APIs, AI agents and browser extensions | ✅ Ready |
 | [Database design](guides/database-design.md) | Tables, relationships and keys, and how they shape your permissions | ✅ Ready |
 
 | Skill | What it does | Status |
 | --- | --- | --- |
 | `supabase-rls-check` | Audits your Supabase database permissions and explains what to fix | ✅ Ready |
 | `repo-protection-check` | Audits your GitHub repo's branch protection and security settings, and offers to fix them | ✅ Ready |
+| `auth-check` | Audits your sign-in settings and code (Supabase Auth) and explains what to fix | ✅ Ready |
 
 ## This repo practises what it preaches
 

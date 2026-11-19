@@ -115,7 +115,7 @@ who someone is.
 - **What:** Use your platform's built-in auth (Supabase Auth, for example) or a dedicated auth provider, rather than writing your own sign-up, password storage and reset code.
 - **Why it matters:** Passwords must be stored with slow, salted **[hashing](../glossary.md#hashing)**, and reset flows are a common source of vulnerabilities. OWASP points out that most modern frameworks already provide this built in.
 - **How to check:** Your app should never store a raw password in a table you created. Passwords should only exist inside the auth system.
-- **Learn more:** [OWASP Password Storage Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html) · [OWASP Authentication Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html)
+- **Learn more:** [OWASP Password Storage Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html) · [OWASP Authentication Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html) · [Guide: Auth by app type](../guides/auth-by-app-type.md)
 
 ### Require people to confirm their email
 

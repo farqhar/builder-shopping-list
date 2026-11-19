@@ -9,6 +9,7 @@ changes your project without asking you first.
 | --- | --- |
 | [`repo-protection-check`](repo-protection-check/SKILL.md) | Checks your GitHub repo's protection and security settings, explains each one in plain English, and offers to fix the gaps |
 | [`supabase-rls-check`](supabase-rls-check/SKILL.md) | Checks your Supabase database permissions (Row Level Security, policies, grants, views) and whether your secret key is exposed in browser code. Try it on the [broken example](../examples/supabase-broken-rls/) first |
+| [`auth-check`](auth-check/SKILL.md) | Checks how your app signs people in: Supabase Auth settings, how server code checks the user, where roles come from, and unsafe sign-in flows in web, mobile and extension code. Try it on the [misconfigured example](../examples/supabase-auth-misconfig/) first |
 
 ## Install
 
@@ -48,6 +49,13 @@ Your project's migration files (`supabase/migrations/`). No migration
 files, for example because you built with Lovable or Bolt? The skill gives
 you a read-only query to paste into Supabase's SQL Editor instead. It never
 changes your database itself.
+
+### What `auth-check` needs
+
+Your project's code, plus `supabase/config.toml` if you have one. Without
+it, the skill asks you to read a few settings from your Supabase dashboard.
+It asks what kind of app you're building, because an internal tool and a
+public app need different settings.
 
 ### What `repo-protection-check` needs
 

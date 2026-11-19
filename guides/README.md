@@ -6,5 +6,4 @@ Checklists tell you **what to check** before going live. Guides explain
 | Guide | What it explains |
 | --- | --- |
 | [Database design](database-design.md) | Tables, keys and relationships, store each fact once, what happens on delete, and how your structure shapes your permission rules |
-
-> 🚧 **Coming soon:** **Auth by app type**, which covers how login works for websites, mobile apps, B2B SaaS, marketplaces and APIs, and which method fits what you're building.
+| [Auth by app type](auth-by-app-type.md) | Sign-in methods compared, how sessions work, and the recommended setup for websites, mobile apps, B2B SaaS, marketplaces, internal tools, APIs, AI agents and browser extensions |
