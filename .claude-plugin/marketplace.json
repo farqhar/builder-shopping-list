@@ -1,0 +1,15 @@
+{
+  "name": "builder-shopping-list",
+  "description": "Claude Code skills that check whether your app and repo are ready to go live, and explain what to fix in plain English.",
+  "owner": {
+    "name": "Farquhar",
+    "url": "https://github.com/farqhar"
+  },
+  "plugins": [
+    {
+      "name": "builder-shopping-list",
+      "source": "./",
+      "description": "Go-live audits for AI-built apps: repo protection, database permissions and more. Every skill checks and explains, and never changes anything without asking."
+    }
+  ]
+}
