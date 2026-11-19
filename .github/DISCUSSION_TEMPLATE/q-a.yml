@@ -1,0 +1,40 @@
+# Form shown when someone starts a discussion in the "Q&A" category.
+# Docs: https://docs.github.com/en/discussions/managing-discussions-for-your-community/creating-discussion-category-forms
+title: "[Question] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        No question is too basic here. Please **never paste real keys,
+        passwords or private URLs**. Swap them for placeholders like
+        `sk_live_REPLACE_ME` before you post.
+  - type: dropdown
+    id: area
+    attributes:
+      label: What's it about?
+      options:
+        - Getting started (Git, repos, environments)
+        - Security and logins
+        - Data and databases
+        - Hosting, domains and email
+        - CI/CD
+        - Monitoring
+        - Costs
+        - Privacy
+        - Governance
+        - Skills and Claude Code
+        - Something else
+    validations:
+      required: true
+  - type: input
+    id: tools
+    attributes:
+      label: What are you building with?
+      placeholder: "e.g. Lovable + Supabase, Bolt, Claude Code + Vercel"
+  - type: textarea
+    id: question
+    attributes:
+      label: Your question
+      description: What are you trying to do, and what have you tried so far?
+    validations:
+      required: true

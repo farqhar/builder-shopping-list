@@ -91,6 +91,12 @@ why every item links to the people who actually wrote the rules.
 More of my work: [AI for Operators](https://github.com/farqhar/ai-for-operators) ·
 [LinkedIn](https://www.linkedin.com/in/REPLACE_ME)
 
+## Community
+
+Questions, ideas, and "I launched!" posts live in
+[Discussions](https://github.com/farqhar/builder-shopping-list/discussions).
+No question is too basic, as long as you leave your real keys out of it.
+
 ## Contributing
 
 Found a gap, a mistake or a broken link? Contributions are welcome, as long as
