@@ -1,0 +1,52 @@
+# .gitignore tells Git which files it must never track or upload.
+# If a file matches a line below, `git add` skips it.
+# Docs: https://git-scm.com/docs/gitignore
+
+# ---------------------------------------------------------------
+# Secrets: the most important section in this file.
+# .env files hold API keys and passwords. They must never reach GitHub.
+# ---------------------------------------------------------------
+.env
+.env.*
+# ...but DO commit an example file with placeholder values,
+# so other people know which variables they need to set.
+!.env.example
+
+# ---------------------------------------------------------------
+# Node.js: installed packages and logs (rebuilt with `npm install`)
+# ---------------------------------------------------------------
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.npm/
+
+# Build output: generated files, rebuilt from source every time
+dist/
+build/
+.next/
+out/
+coverage/
+
+# ---------------------------------------------------------------
+# Tool caches
+# ---------------------------------------------------------------
+# lychee (our link checker) stores results here between runs
+.lycheecache
+
+# ---------------------------------------------------------------
+# Operating system junk files
+# ---------------------------------------------------------------
+# macOS folder metadata
+.DS_Store
+# Windows thumbnail cache
+Thumbs.db
+Desktop.ini
+
+# ---------------------------------------------------------------
+# Editor settings (personal to you, not the project)
+# ---------------------------------------------------------------
+.vscode/
+.idea/
+*.swp
