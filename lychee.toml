@@ -1,0 +1,28 @@
+# Settings for lychee, the tool that checks every link in this repo still works.
+# Used by .github/workflows/links.yml, and by `lychee --config lychee.toml .`
+# on your own computer.
+# All options: https://lychee.cli.rs/usage/config/
+
+# Treat any 2xx status as a working link. 429 means "too many requests":
+# the site is rate-limiting us, not broken, so don't fail on it.
+accept = ["200..=299", "429"]
+
+# Give slow sites 20 seconds, and retry twice before calling a link dead.
+timeout = 20
+max_retries = 2
+retry_wait_time = 2
+
+# Check web links (https/http) and links to other files in this repo.
+# mailto: links are skipped. We don't publish email addresses.
+scheme = ["https", "http", "file"]
+
+# Links we deliberately don't check. Each one is a regular expression.
+exclude = [
+  # Placeholder domain used in examples. It's not meant to be a real page.
+  '^https?://(www\.)?example\.(com|org|net)',
+  # LinkedIn blocks automated checkers, so it always looks broken.
+  '^https?://(www\.)?linkedin\.com',
+  # "New issue" forms and Discussions need a signed-in user, or a repo
+  # setting that may not be switched on yet.
+  '^https://github\.com/farqhar/builder-shopping-list/(issues/new|discussions)',
+]

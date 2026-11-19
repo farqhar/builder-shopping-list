@@ -1,0 +1,25 @@
+// Settings for markdownlint, the tool that checks our Markdown style.
+// The same file is used in CI (.github/workflows/lint.yml) and when you run
+// `npx markdownlint-cli2 "**/*.md"` on your own computer.
+// Rule list: https://github.com/DavidAnson/markdownlint/blob/main/doc/Rules.md
+{
+  "config": {
+    // Start from every rule switched on...
+    "default": true,
+    // ...then relax the ones that fight against readable prose:
+    // MD013 limits line length. Long sentences are fine in docs.
+    "MD013": false,
+    // MD024 bans repeated headings. Allow them in different sections,
+    // because many checklists will have a "How to check" pattern.
+    "MD024": { "siblings_only": true },
+    // MD033 bans raw HTML. Allow the few tags we need for images and
+    // collapsible sections.
+    "MD033": { "allowed_elements": ["img", "picture", "source", "p", "a", "br", "details", "summary"] }
+  },
+  // Files the linter should skip.
+  "ignores": [
+    "node_modules/**",
+    // The PR template is a form, not a document, so it doesn't start with a title.
+    ".github/PULL_REQUEST_TEMPLATE.md"
+  ]
+}

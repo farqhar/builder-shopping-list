@@ -1,0 +1,11 @@
+# Dependabot opens pull requests when the tools we depend on release updates.
+# Here it watches the GitHub Actions used in .github/workflows/.
+# Because our workflows pin each action to an exact commit (a "SHA"),
+# Dependabot is what keeps those pins up to date.
+# Docs: https://docs.github.com/en/code-security/dependabot/working-with-dependabot/keeping-your-actions-up-to-date-with-dependabot
+version: 2
+updates:
+  - package-ecosystem: "github-actions"  # Watch the actions used by our workflows
+    directory: "/"                       # Dependabot finds .github/workflows/ from the repo root
+    schedule:
+      interval: "weekly"                 # Check once a week, so we get a few PRs, not a flood
