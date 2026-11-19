@@ -52,10 +52,17 @@ Don't recognise a word? Look it up in the [glossary](glossary.md).
 | [05 Monitoring](checklists/05-monitoring.md) | Logs, error tracking, uptime alerts | 🚧 In progress |
 | [06 Costs](checklists/06-costs.md) | Spending caps, usage alerts, surprise-bill traps | 🚧 In progress |
 | [07 Privacy](checklists/07-privacy.md) | What personal data you collect, privacy policy basics | 🚧 In progress |
+| [08 Governance](checklists/08-governance.md) | Account ownership, access, branch protection, offboarding, incidents | 🚧 In progress |
+
+| Guide | What it explains | Status |
+| --- | --- | --- |
+| [Auth by app type](guides/README.md) | How login works for websites, mobile apps, B2B SaaS, marketplaces and APIs | 🚧 In progress |
+| [Database design](guides/README.md) | Tables, relationships and keys, and how they shape your permissions | 🚧 In progress |
 
 | Skill | What it does | Status |
 | --- | --- | --- |
 | `supabase-rls-check` | Audits your Supabase database permissions and explains what to fix | 🚧 In progress |
+| `repo-protection-check` | Audits your GitHub repo's branch protection and security settings, and offers to fix them | 🚧 In progress |
 
 ## This repo practises what it preaches
 
@@ -70,6 +77,9 @@ working:
   of Git.
 - [`.github/dependabot.yml`](.github/dependabot.yml) keeps the tools those
   checks depend on up to date.
+- `main` is protected by the ruleset in
+  [`examples/github-rulesets/`](examples/github-rulesets/), so every change,
+  including the maintainer's, goes through a pull request.
 
 ## About me
 
