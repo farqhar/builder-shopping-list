@@ -52,7 +52,7 @@ Don't recognise a word? Look it up in the [glossary](glossary.md).
 | --- | --- | --- |
 | [00 Before you start](checklists/00-before-you-start.md) | Git, repositories, keeping development separate from production | 🚧 In progress |
 | [01 Security](checklists/01-security.md) | Logins, permissions and Row Level Security, secret keys, user input | ✅ Ready |
-| [02 Data](checklists/02-data.md) | Database structure, migrations, backups, testing a restore | 🚧 In progress |
+| [02 Data](checklists/02-data.md) | Database structure, migrations, backups, testing a restore | ✅ Ready |
 | [03 Infrastructure](checklists/03-infrastructure.md) | Hosting, domains and DNS, email that actually arrives | 🚧 In progress |
 | [04 CI/CD](checklists/04-ci-cd.md) | Automatic checks and deploys, preview versus production | 🚧 In progress |
 | [05 Monitoring](checklists/05-monitoring.md) | Logs, error tracking, uptime alerts | 🚧 In progress |
@@ -63,11 +63,11 @@ Don't recognise a word? Look it up in the [glossary](glossary.md).
 | Guide | What it explains | Status |
 | --- | --- | --- |
 | [Auth by app type](guides/README.md) | How login works for websites, mobile apps, B2B SaaS, marketplaces and APIs | 🚧 In progress |
-| [Database design](guides/README.md) | Tables, relationships and keys, and how they shape your permissions | 🚧 In progress |
+| [Database design](guides/database-design.md) | Tables, relationships and keys, and how they shape your permissions | ✅ Ready |
 
 | Skill | What it does | Status |
 | --- | --- | --- |
-| `supabase-rls-check` | Audits your Supabase database permissions and explains what to fix | 🚧 In progress |
+| `supabase-rls-check` | Audits your Supabase database permissions and explains what to fix | ✅ Ready |
 | `repo-protection-check` | Audits your GitHub repo's branch protection and security settings, and offers to fix them | ✅ Ready |
 
 ## This repo practises what it preaches
