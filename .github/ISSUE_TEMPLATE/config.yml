@@ -1,0 +1,6 @@
+# Turns off blank issues, so every issue uses one of the templates.
+blank_issues_enabled: false
+contact_links:
+  - name: Ask a question or share an idea
+    url: https://github.com/farqhar/builder-shopping-list/discussions
+    about: For questions and open-ended chat, use Discussions instead of an issue.

@@ -1,0 +1,56 @@
+name: Suggest an item
+description: Suggest something builders should check before going live.
+title: "[Suggestion]: "
+labels: ["suggestion"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for the suggestion. Every item in this repo needs an
+        **authoritative source**: official docs, OWASP, or a standards body.
+        Blog posts and AI answers aren't enough on their own.
+  - type: dropdown
+    id: checklist
+    attributes:
+      label: Which checklist does this belong in?
+      options:
+        - 00 Before you start
+        - 01 Security
+        - 02 Data
+        - 03 Infrastructure
+        - 04 CI/CD
+        - 05 Monitoring
+        - 06 Costs
+        - 07 Privacy
+        - Not sure
+    validations:
+      required: true
+  - type: input
+    id: item
+    attributes:
+      label: The item, in one sentence
+      placeholder: "Turn on two-factor authentication for your hosting account"
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why it matters
+      description: What goes wrong if someone skips it?
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Source link
+      description: A link to official documentation or another authoritative source.
+      placeholder: "https://"
+    validations:
+      required: true
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before you submit
+      options:
+        - label: My example doesn't include real company names, URLs, keys or project details.
+          required: true

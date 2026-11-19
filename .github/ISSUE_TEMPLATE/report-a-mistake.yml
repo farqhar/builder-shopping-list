@@ -1,0 +1,31 @@
+name: Report a mistake
+description: Something is wrong, out of date, or a link is broken.
+title: "[Mistake]: "
+labels: ["mistake"]
+body:
+  - type: input
+    id: file
+    attributes:
+      label: Which file?
+      placeholder: "checklists/01-security.md"
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What's wrong?
+      description: Quote the text if you can.
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Source for the correct information
+      description: A link to official docs or another authoritative source, if you have one.
+      placeholder: "https://"
+  - type: markdown
+    attributes:
+      value: |
+        **Found a security problem in one of the skills or examples?** Please
+        don't post it in a public issue. Contact the maintainer privately
+        through their GitHub profile.
