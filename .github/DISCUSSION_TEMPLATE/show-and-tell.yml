@@ -1,0 +1,32 @@
+# Form shown when someone starts a discussion in the "Show and tell" category.
+# Docs: https://docs.github.com/en/discussions/managing-discussions-for-your-community/creating-discussion-category-forms
+title: "[Launched] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Shipped something? We'd love to see it. A first launch counts, so
+        does a tiny internal tool, and so does a near-miss you caught in time.
+  - type: input
+    id: what
+    attributes:
+      label: What did you build?
+      placeholder: "A booking app for a local yoga studio"
+    validations:
+      required: true
+  - type: input
+    id: tools
+    attributes:
+      label: What did you build it with?
+      placeholder: "e.g. Lovable + Supabase"
+  - type: textarea
+    id: caught
+    attributes:
+      label: Did a checklist item catch something?
+      description: The best posts here are honest ones. What almost went wrong, and what fixed it?
+  - type: input
+    id: link
+    attributes:
+      label: Link (optional)
+      description: Only share what's meant to be public.
+      placeholder: "https://"
