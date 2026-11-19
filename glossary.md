@@ -31,6 +31,13 @@ link, or a social login. (Deciding what that person is *allowed* to do is a
 separate job, handled by things like [policies](#policy).)
 [OWASP Authentication Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html)
 
+## C
+
+### Constraint
+
+A rule the database checks every time data is added or changed, such as "this can't be empty" (`not null`) or "quantity must be above zero" (`check`). It applies however the data arrives, which makes it stronger than a check in your app.
+[Postgres: Constraints](https://www.postgresql.org/docs/current/ddl-constraints.html)
+
 ## D
 
 ### Dependabot
@@ -65,6 +72,11 @@ schema is one that apps can reach over the internet through the Data API. The
 
 ## F
 
+### Foreign key
+
+A column that points at a row in another table, such as an order's `user_id` pointing at a user. The database refuses links to rows that don't exist.
+[Supabase: Joining tables with foreign keys](https://supabase.com/docs/guides/database/tables#joining-tables-with-foreign-keys)
+
 ### Frontend and backend
 
 The **frontend** is the part of your app that runs in the visitor's browser or
@@ -91,7 +103,26 @@ the results. Passwords should be stored hashed with a slow algorithm, never as
 plain text.
 [OWASP Password Storage Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html)
 
+## I
+
+### Index
+
+A lookup structure, like the index at the back of a book, that lets the database find rows without reading the whole table. Postgres doesn't create one for foreign keys automatically.
+[Supabase: Managing indexes](https://supabase.com/docs/guides/database/postgres/indexes)
+
+## J
+
+### Join table
+
+A table that sits between two others to link them many-to-many, for example `order_items` linking `orders` and `products`. Each row holds a foreign key to each side.
+[Supabase: Joining tables with foreign keys](https://supabase.com/docs/guides/database/tables#joining-tables-with-foreign-keys)
+
 ## M
+
+### Migration
+
+A numbered SQL file that makes one change to your database structure, saved in Git so every change is recorded, reviewable and repeatable.
+[Supabase: Database migrations](https://supabase.com/docs/guides/deployment/database-migrations)
 
 ### Multi-factor authentication (MFA)
 
@@ -99,6 +130,18 @@ Logging in with something you know (a password) plus something you have (an
 app on your phone, a security key). A stolen password alone is then not
 enough. Also called two-factor authentication (2FA).
 [OWASP Multifactor Authentication Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Multifactor_Authentication_Cheat_Sheet.html)
+
+### Multi-tenant
+
+An app where several organisations (tenants) share the same database, and each must only see its own data. Common in business software.
+[Supabase: Advanced pgTAP testing](https://supabase.com/docs/guides/local-development/testing/pgtap-extended)
+
+## N
+
+### Normalization
+
+Organising tables so each fact is stored in one place, which avoids copies that drift out of sync.
+[Microsoft: Database normalization basics](https://learn.microsoft.com/en-us/previous-versions/troubleshoot/access/database-normalization-description)
 
 ## P
 
@@ -110,12 +153,22 @@ as part of the command. This is the main defence against
 [SQL injection](#sql-injection).
 [OWASP SQL Injection Prevention Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html)
 
+### Point-in-time recovery (PITR)
+
+A backup method that lets you restore your database to any moment, down to the second, rather than only to the last daily backup.
+[Supabase: Database backups](https://supabase.com/docs/guides/platform/backups#point-in-time-recovery)
+
 ### Policy
 
 In [Row Level Security](#row-level-security-rls), a rule that says who can
 read, add, change or delete which rows, for example "a user can only see
 orders where `user_id` matches their own ID".
 [Supabase: Row Level Security](https://supabase.com/docs/guides/database/postgres/row-level-security)
+
+### Primary key
+
+A column whose value is unique for every row in a table, like a passport number for that row. Usually called `id`.
+[Supabase: Primary keys](https://supabase.com/docs/guides/database/tables#primary-keys)
 
 ### Publishable key
 
@@ -137,6 +190,11 @@ blocks it before the secret reaches GitHub.
 [GitHub: Push protection](https://docs.github.com/en/code-security/concepts/secret-security/push-protection)
 
 ## R
+
+### Relationship
+
+How rows in two tables connect: one-to-one (a user has one profile), one-to-many (a user has many orders) or many-to-many (orders and products, through a [join table](#join-table)).
+[Supabase: Relationships between tables](https://supabase.com/docs/guides/database/tables#relationships-between-tables)
 
 ### Rotate (a key)
 
@@ -177,6 +235,18 @@ and pull requests, for leaked secrets and raises an alert.
 An attack where someone types SQL code into a form field, and a badly built
 query runs it as part of the command. It can expose or delete a whole
 database. [OWASP SQL Injection Prevention Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html)
+
+### Staging environment
+
+A copy of your app and database that's set up like production but used only for testing, so mistakes land there first.
+[Supabase: Managing environments](https://supabase.com/docs/guides/deployment/managing-environments)
+
+## T
+
+### Table
+
+Where a database stores one kind of thing, such as products or orders, as rows and columns, a bit like a spreadsheet. Every column has a fixed type.
+[Supabase: Tables and data](https://supabase.com/docs/guides/database/tables)
 
 ## U
 
