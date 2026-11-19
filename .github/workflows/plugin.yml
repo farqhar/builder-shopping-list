@@ -1,0 +1,44 @@
+# This workflow checks that our Claude Code plugin and skills are valid.
+# A small mistake in a skill's header (its "frontmatter") makes Claude Code
+# quietly ignore the skill's description, so Claude never knows when to use it.
+# This catches that before it reaches anyone who installs the plugin.
+
+# The name shown in the "Actions" tab and on pull requests.
+name: Plugin validation
+
+on:
+  # Run when anyone pushes, or opens or updates a pull request...
+  push:
+    # ...but only if they changed a skill or the plugin's settings files.
+    paths:
+      - "skills/**"
+      - ".claude-plugin/**"
+      - ".github/workflows/plugin.yml"
+  pull_request:
+    paths:
+      - "skills/**"
+      - ".claude-plugin/**"
+      - ".github/workflows/plugin.yml"
+
+# Read-only access to the code is all this needs.
+permissions:
+  contents: read
+
+jobs:
+  validate-plugin:
+    # Run on a fresh Linux machine provided by GitHub.
+    runs-on: ubuntu-latest
+    steps:
+      # Download the repo, pinned to an exact commit (SHA) for safety.
+      - name: Check out the repo
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      # Run Claude Code's built-in validator. It checks the marketplace file,
+      # the plugin file and every skill. It exits with an error (failing this
+      # check) if anything is broken. It doesn't need an API key.
+      # The version is pinned to an exact number, so a new release can't
+      # change the result without us noticing. Bump it on purpose now and then.
+      - name: Validate plugin and skills
+        run: npx --yes @anthropic-ai/claude-code@2.1.321 plugin validate .

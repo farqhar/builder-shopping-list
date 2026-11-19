@@ -36,7 +36,13 @@ English by a non-engineer who learned most of it the hard way.
 3. **Use the skills in Claude Code.** Skills are instruction files that let
    Claude audit your project for you and explain what it finds in plain
    English. They check and explain, and never change your project without
-   asking. Install steps are in [`skills/README.md`](skills/README.md).
+   asking. Install them all with one command in a Claude Code session:
+
+   ```text
+   /plugin install builder-shopping-list --marketplace farqhar/builder-shopping-list
+   ```
+
+   More options and usage are in [`skills/README.md`](skills/README.md).
 
 Don't recognise a word? Look it up in the [glossary](glossary.md).
 
@@ -62,7 +68,7 @@ Don't recognise a word? Look it up in the [glossary](glossary.md).
 | Skill | What it does | Status |
 | --- | --- | --- |
 | `supabase-rls-check` | Audits your Supabase database permissions and explains what to fix | 🚧 In progress |
-| `repo-protection-check` | Audits your GitHub repo's branch protection and security settings, and offers to fix them | 🚧 In progress |
+| `repo-protection-check` | Audits your GitHub repo's branch protection and security settings, and offers to fix them | ✅ Ready |
 
 ## This repo practises what it preaches
 

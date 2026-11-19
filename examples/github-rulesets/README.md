@@ -26,6 +26,19 @@ A check name is the **job** name inside your workflow file, for example
 `markdownlint:` in `.github/workflows/lint.yml`. Only require checks that run
 on every pull request. A check that's skipped will block merging forever.
 
+### How to download it
+
+Clicking the file on GitHub only *shows* it. To save it:
+
+- Open [`protect-main.json`](protect-main.json) on GitHub and click the
+  **Download raw file** icon in the bar above the code, or
+- open the [raw version](https://raw.githubusercontent.com/farqhar/builder-shopping-list/main/examples/github-rulesets/protect-main.json)
+  and use your browser's **Save Page As**, keeping the `.json` name.
+
+Prefer not to download anything? The `repo-protection-check` skill in
+[`skills/`](../../skills/README.md) can check your repo and apply this ruleset
+for you, after asking.
+
 ### How to import it
 
 1. In your repo, go to **Settings**, then **Rules**, then **Rulesets**.
