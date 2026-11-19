@@ -81,6 +81,34 @@ Broken link check (needs [lychee](https://lychee.cli.rs) installed):
 lychee --config lychee.toml .
 ```
 
+## How contributions are approved
+
+Every change to this repo goes through a pull request, and the maintainer
+reviews and merges each one. Nothing reaches `main` without that approval.
+
+- **You can't merge your own pull request.** Only the maintainer can.
+- **Automatic checks run first.** If this is your first contribution, the
+  checks may wait until the maintainer approves them to run. That's a GitHub
+  safety feature for public repos, not a sign that anything is wrong.
+- **Please be patient.** Every claim gets checked against its source, so a
+  review can take a few days.
+
+### Signing off your commits
+
+This repo asks contributors to **sign off** their commits. A sign-off is a
+line at the end of the commit message, `Signed-off-by: Your Name <email>`,
+that confirms you have the right to contribute the work under this repo's
+licences. This follows the
+[Developer Certificate of Origin](https://developercertificate.org/).
+
+- **Editing on GitHub.com:** GitHub adds the sign-off for you.
+- **Using Git on your computer:** add `--signoff` (or `-s`) when you commit,
+  for example `git commit -s -m "Fix broken link in security checklist"`.
+
+Signing off is a promise, not a security check. It's different from
+cryptographically signed commits. See
+[GitHub: Managing the commit signoff policy](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/managing-repository-settings/managing-the-commit-signoff-policy-for-your-repository).
+
 ## Code of Conduct
 
 Everyone taking part is expected to follow our
