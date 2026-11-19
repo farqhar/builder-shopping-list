@@ -1,0 +1,144 @@
+# This workflow checks that links in our Markdown files still work.
+# In a repo where every claim must link to a source, a dead link means
+# a claim with no source, so we check for them automatically.
+#
+# It runs in two modes:
+#   1. On a push or pull request, it checks only the files that changed.
+#      If one of those has a broken link, the check fails (red X), so the
+#      problem is fixed before it's merged.
+#   2. Once a week, it checks every file. Websites move pages around even
+#      when we change nothing. If it finds broken links, it opens an issue
+#      instead of failing, so nobody's work is blocked.
+
+# The name shown in the "Actions" tab and on pull requests.
+name: Link check
+
+# "on" lists the events that start this workflow.
+on:
+  # Run on every push to any branch.
+  push:
+  # Run when a pull request is opened or updated.
+  pull_request:
+  # Run on a timer, written in "cron" format:
+  # minute hour day-of-month month day-of-week.
+  # "17 3 * * 1" means 03:17 UTC every Monday. An odd minute avoids the
+  # busy top of the hour on GitHub's servers.
+  schedule:
+    - cron: "17 3 * * 1"
+  # Adds a "Run workflow" button in the Actions tab so you can start it by hand.
+  workflow_dispatch:
+
+# Default to read-only access. The weekly job asks for a little more below.
+permissions:
+  contents: read
+
+jobs:
+  # ---------------------------------------------------------------
+  # Job 1: check only the Markdown files that changed (push and PR).
+  # ---------------------------------------------------------------
+  changed-files:
+    # Only run this job for pushes and pull requests, not the weekly timer.
+    if: github.event_name == 'push' || github.event_name == 'pull_request'
+    # Run on a fresh Linux machine provided by GitHub.
+    runs-on: ubuntu-latest
+    steps:
+      # Download the repo, pinned to an exact commit (SHA) for safety.
+      - name: Check out the repo
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          # Download the full history, so we can compare against older commits.
+          fetch-depth: 0
+          # Don't leave GitHub credentials on the machine.
+          persist-credentials: false
+
+      # Work out which .md files this push or pull request changed.
+      - name: List changed Markdown files
+        # "id" lets later steps read this step's output.
+        id: changed
+        # Values from GitHub go in through environment variables, not straight
+        # into the script. That stops text in a branch name or PR from being
+        # run as a command (known as "script injection").
+        env:
+          EVENT: ${{ github.event_name }}
+          PR_BASE: ${{ github.event.pull_request.base.sha }}
+          PUSH_BEFORE: ${{ github.event.before }}
+        run: |
+          # Choose the commit to compare against.
+          if [ "$EVENT" = "pull_request" ]; then BASE="$PR_BASE"; else BASE="$PUSH_BEFORE"; fi
+          # On a brand-new branch there's no "before" commit (it's all zeros),
+          # so compare against where the branch split off from main instead.
+          if [ -z "$BASE" ] || ! git cat-file -e "$BASE^{commit}" 2>/dev/null; then
+            BASE=$(git merge-base origin/main HEAD 2>/dev/null || git rev-list --max-parents=0 HEAD | tail -n 1)
+          fi
+          # List .md files that were added, copied, modified or renamed (not deleted).
+          FILES=$(git diff --name-only --diff-filter=ACMR "$BASE" HEAD -- '*.md' | tr '\n' ' ')
+          # Print the list in the log, so you can see what was checked.
+          echo "Changed Markdown files: ${FILES:-none}"
+          # Save the list as this step's output.
+          echo "files=$FILES" >> "$GITHUB_OUTPUT"
+
+      # Run lychee on just those files. Skipped if no Markdown changed.
+      - name: Check links in changed files
+        if: steps.changed.outputs.files != ''
+        uses: lycheeverse/lychee-action@e7477775783ea5526144ba13e8db5eec57747ce8 # v2.9.0
+        with:
+          # Use our settings file, hide the progress bar, and check the listed files.
+          args: --config lychee.toml --no-progress ${{ steps.changed.outputs.files }}
+          # A broken link fails this check, which blocks the merge once branch protection is on.
+          fail: true
+          # Don't fail just because a changed file contains no links.
+          failIfEmpty: false
+
+  # ---------------------------------------------------------------
+  # Job 2: check every file (weekly, or by hand) and report in an issue.
+  # ---------------------------------------------------------------
+  all-files:
+    # Only run on the weekly timer or when started by hand.
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    # This job needs one extra permission: creating and editing issues.
+    permissions:
+      contents: read
+      issues: write
+    steps:
+      # Download the repo (pinned SHA, no saved credentials).
+      - name: Check out the repo
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      # Check every Markdown file in the repo.
+      - name: Check links in all files
+        # "id" lets the next step read lychee's result.
+        id: lychee
+        uses: lycheeverse/lychee-action@e7477775783ea5526144ba13e8db5eec57747ce8 # v2.9.0
+        with:
+          # Use our settings file, hide the progress bar, and check every .md file.
+          args: --config lychee.toml --no-progress './**/*.md'
+          # Don't fail the job. We report broken links in an issue instead.
+          fail: false
+          # Save the report to this file, so the next step can post it.
+          output: lychee/out.md
+
+      # If lychee found broken links, open an issue (or update the open one).
+      - name: Open or update the broken-links issue
+        # lychee exits with a non-zero code when it finds problems.
+        if: steps.lychee.outputs.exit_code != 0
+        env:
+          # The built-in token lets the GitHub CLI ("gh") act on this repo.
+          GH_TOKEN: ${{ github.token }}
+          # Tell gh which repo we're in.
+          GH_REPO: ${{ github.repository }}
+        run: |
+          # Use one fixed title, so we update a single issue instead of
+          # opening a new one every week.
+          TITLE="Broken links found by the weekly check"
+          # Look for an open issue with that title.
+          NUMBER=$(gh issue list --state open --search "in:title \"$TITLE\"" --json number --jq '.[0].number')
+          if [ -n "$NUMBER" ]; then
+            # Found one, so replace its text with this week's report.
+            gh issue edit "$NUMBER" --body-file lychee/out.md
+          else
+            # None open, so create a new issue.
+            gh issue create --title "$TITLE" --body-file lychee/out.md
+          fi

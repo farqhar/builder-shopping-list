@@ -1,0 +1,44 @@
+# This workflow checks that every Markdown file follows the same style rules.
+# It's a small example of CI (continuous integration): an automatic check
+# that runs on GitHub's computers every time someone pushes a change.
+
+# The name shown in the "Actions" tab and on pull requests.
+name: Markdown lint
+
+# "on" lists the events that start this workflow.
+on:
+  # Run whenever anyone pushes commits to any branch...
+  push:
+  # ...and whenever a pull request is opened or updated.
+  pull_request:
+
+# Give the workflow the least access it needs: read-only access to the code.
+# If a step were ever compromised, it couldn't change the repo.
+permissions:
+  contents: read
+
+# A workflow is made of one or more "jobs".
+jobs:
+  # "markdownlint" is our name for this job.
+  markdownlint:
+    # Run the job on a fresh Linux machine that GitHub provides.
+    runs-on: ubuntu-latest
+    # A job is a list of "steps" that run in order.
+    steps:
+      # Step 1: download a copy of the repo onto the machine.
+      # The long code after "@" is an exact commit (a "SHA"), not a tag like "v7".
+      # Tags can be moved to point at different code. A SHA can't, so this
+      # protects us if the action's repo is ever compromised.
+      - name: Check out the repo
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          # Don't save GitHub credentials on the machine. This job doesn't need them.
+          persist-credentials: false
+
+      # Step 2: run markdownlint over every .md file in the repo.
+      # It reads its rules from .markdownlint-cli2.jsonc at the repo root.
+      - name: Lint Markdown files
+        uses: DavidAnson/markdownlint-cli2-action@696eb3f2509270d7b882d2aa68347bc676e7af34 # v25.0.0
+        with:
+          # Which files to check. "**" means "in any folder".
+          globs: "**/*.md"
