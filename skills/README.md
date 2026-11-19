@@ -8,6 +8,7 @@ changes your project without asking you first.
 | Skill | What it does |
 | --- | --- |
 | [`repo-protection-check`](repo-protection-check/SKILL.md) | Checks your GitHub repo's protection and security settings, explains each one in plain English, and offers to fix the gaps |
+| [`supabase-rls-check`](supabase-rls-check/SKILL.md) | Checks your Supabase database permissions (Row Level Security, policies, grants, views) and whether your secret key is exposed in browser code. Try it on the [broken example](../examples/supabase-broken-rls/) first |
 
 ## Install
 
@@ -40,6 +41,13 @@ picks the right skill. Or run one directly by name:
 
 The `builder-shopping-list:` prefix is the plugin's name. Claude Code adds it
 to every plugin skill.
+
+### What `supabase-rls-check` needs
+
+Your project's migration files (`supabase/migrations/`). No migration
+files, for example because you built with Lovable or Bolt? The skill gives
+you a read-only query to paste into Supabase's SQL Editor instead. It never
+changes your database itself.
 
 ### What `repo-protection-check` needs
 

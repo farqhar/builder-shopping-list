@@ -67,7 +67,7 @@ Don't recognise a word? Look it up in the [glossary](glossary.md).
 
 | Skill | What it does | Status |
 | --- | --- | --- |
-| `supabase-rls-check` | Audits your Supabase database permissions and explains what to fix | 🚧 In progress |
+| `supabase-rls-check` | Audits your Supabase database permissions and explains what to fix | ✅ Ready |
 | `repo-protection-check` | Audits your GitHub repo's branch protection and security settings, and offers to fix them | ✅ Ready |
 
 ## This repo practises what it preaches
