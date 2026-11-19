@@ -114,7 +114,7 @@ If the same fact lives in two places, the two copies eventually disagree.
 Microsoft's guide to **[normalization](../glossary.md#normalization)** (the
 formal name for this) says redundant data "creates maintenance problems",
 because a change has to be made the same way everywhere.
-[Microsoft: Database normalization basics](https://learn.microsoft.com/en-us/previous-versions/troubleshoot/access/database-normalization-description)
+[Microsoft: Database normalization basics](https://learn.microsoft.com/en-us/previous-versions/troubleshoot/microsoft-365/microsoft-365-apps/access/database-normalization-description)
 
 Signs your AI tool has duplicated data:
 

@@ -141,7 +141,7 @@ An app where several organisations (tenants) share the same database, and each m
 ### Normalization
 
 Organising tables so each fact is stored in one place, which avoids copies that drift out of sync.
-[Microsoft: Database normalization basics](https://learn.microsoft.com/en-us/previous-versions/troubleshoot/access/database-normalization-description)
+[Microsoft: Database normalization basics](https://learn.microsoft.com/en-us/previous-versions/troubleshoot/microsoft-365/microsoft-365-apps/access/database-normalization-description)
 
 ## P
 
