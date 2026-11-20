@@ -41,6 +41,13 @@ separate job, handled by things like [policies](#policy).)
 Deciding what a signed-in person (or program) is allowed to do, such as which rows they can read. It's separate from [authentication](#authentication), which only checks who they are.
 [OWASP Authorization Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html)
 
+## B
+
+### Branch
+
+A separate line of work in a Git repository. You make changes on a branch so the main version keeps working, then merge the branch back when it's ready.
+[GitHub flow](https://docs.github.com/en/get-started/using-github/github-flow)
+
 ## C
 
 ### Constraint
@@ -80,6 +87,11 @@ The company you bought your domain name from, and where its settings live. Whoev
 
 ## E
 
+### Environment
+
+One running copy of your app with its own settings and data. Most apps have a development environment for building and testing, and a production environment that real users use.
+[Twelve-Factor: Dev/prod parity](https://12factor.net/dev-prod-parity)
+
 ### Environment variable
 
 A named setting, like `DATABASE_URL`, that your app reads when it runs instead
@@ -111,6 +123,11 @@ Secrets belong only in the backend.
 [Next.js: Environment variables](https://nextjs.org/docs/app/guides/environment-variables)
 
 ## G
+
+### Git
+
+A version control system: it records every change to your project's files so you can see what changed, who changed it, and go back to an earlier version.
+[Git: About version control](https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control)
 
 ### .gitignore
 
@@ -251,6 +268,11 @@ what your permission rules (like [RLS policies](#policy)) allow. Supabase calls
 it the publishable key (`sb_publishable_...`). Its older equivalent is the
 `anon` key. [Supabase: API keys](https://supabase.com/docs/guides/getting-started/api-keys)
 
+### Pull request
+
+A request to merge the changes on one branch into another, usually `main`. It's where changes get reviewed and automatic checks run before they go in. Often shortened to PR.
+[GitHub flow](https://docs.github.com/en/get-started/using-github/github-flow)
+
 ### Push
 
 Sending the commits on your computer up to a shared copy of the repository,
@@ -269,6 +291,11 @@ blocks it before the secret reaches GitHub.
 
 How rows in two tables connect: one-to-one (a user has one profile), one-to-many (a user has many orders) or many-to-many (orders and products, through a [join table](#join-table)).
 [Supabase: Relationships between tables](https://supabase.com/docs/guides/database/tables#relationships-between-tables)
+
+### Repository
+
+A project's folder of files plus its full Git history, usually shared on a site like GitHub. Often shortened to repo.
+[GitHub: About repositories](https://docs.github.com/en/repositories/creating-and-managing-repositories/about-repositories)
 
 ### Rotate (a key)
 
@@ -308,6 +335,11 @@ and pull requests, for leaked secrets and raises an alert.
 
 A `SECURITY.md` file in a repository that tells people how to report a security problem privately.
 [GitHub: Adding a security policy](https://docs.github.com/en/code-security/how-tos/report-and-fix-vulnerabilities/configure-vulnerability-reporting/add-security-policy)
+
+### Seed data
+
+Made-up sample data used to fill a development or test database, so you never need real users' data to try things out.
+[Supabase: Seeding your database](https://supabase.com/docs/guides/local-development/seeding-your-database)
 
 ### Session
 
