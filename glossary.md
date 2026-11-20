@@ -50,6 +50,16 @@ A separate line of work in a Git repository. You make changes on a branch so the
 
 ## C
 
+### CD (continuous deployment)
+
+Automatically releasing your app after each change passes its checks, instead of deploying by hand.
+[GitHub: About continuous deployment](https://docs.github.com/en/actions/get-started/continuous-deployment)
+
+### CI (continuous integration)
+
+Automatically checking every change (building, linting and testing it) as soon as it's pushed, so mistakes are caught early.
+[GitHub: About continuous integration](https://docs.github.com/en/actions/get-started/continuous-integration)
+
 ### Constraint
 
 A rule the database checks every time data is added or changed, such as "this can't be empty" (`not null`) or "quantity must be above zero" (`check`). It applies however the data arrives, which makes it stronger than a check in your app.
@@ -128,6 +138,11 @@ Secrets belong only in the backend.
 
 A version control system: it records every change to your project's files so you can see what changed, who changed it, and go back to an earlier version.
 [Git: About version control](https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control)
+
+### GitHub Actions
+
+GitHub's built-in automation. It runs your workflows on GitHub's computers when things happen in your repo, such as a push or a pull request.
+[GitHub: About continuous integration](https://docs.github.com/en/actions/get-started/continuous-integration)
 
 ### .gitignore
 
@@ -256,6 +271,11 @@ read, add, change or delete which rows, for example "a user can only see
 orders where `user_id` matches their own ID".
 [Supabase: Row Level Security](https://supabase.com/docs/guides/database/postgres/row-level-security)
 
+### Preview deployment
+
+A temporary live copy of your app, built from a branch or pull request, with its own link, so you can try changes before they go to production.
+[Vercel: Environments](https://vercel.com/docs/deployments/environments)
+
 ### Primary key
 
 A column whose value is unique for every row in a table, like a passport number for that row. Usually called `id`.
@@ -312,6 +332,11 @@ in. With RLS off, the table is open to anyone who can reach it.
 
 ## S
 
+### Script injection
+
+An attack where someone puts commands into text your workflow uses (like a pull request title), and a badly written script runs them.
+[GitHub: Secure use reference](https://docs.github.com/en/actions/reference/security/secure-use)
+
 ### Secret
 
 Anything that grants access and must stay private: [secret keys](#secret-key),
@@ -346,6 +371,11 @@ Made-up sample data used to fill a development or test database, so you never ne
 How an app remembers you're signed in between pages and visits. In Supabase, a short-lived access token plus a refresh token that gets a new one.
 [Supabase: User sessions](https://supabase.com/docs/guides/auth/sessions)
 
+### SHA pinning
+
+Referring to an exact version of a GitHub Action by its full commit ID (a 40-character SHA) instead of a tag like `v3`, which can be moved to different code.
+[GitHub: Secure use reference](https://docs.github.com/en/actions/reference/security/secure-use)
+
 ### Single sign-on (SSO)
 
 Signing in to many apps with one company account, managed by an identity provider such as Okta or Microsoft Entra. Businesses often ask for it.
@@ -361,6 +391,11 @@ database. [OWASP SQL Injection Prevention Cheat Sheet](https://cheatsheetseries.
 
 A copy of your app and database that's set up like production but used only for testing, so mistakes land there first.
 [Supabase: Managing environments](https://supabase.com/docs/guides/deployment/managing-environments)
+
+### Status check
+
+A pass or fail result shown on a pull request, usually from a CI workflow. Required status checks must pass before the pull request can be merged.
+[GitHub: Status checks](https://docs.github.com/en/pull-requests/reference/status-checks)
 
 ## T
 
@@ -393,3 +428,10 @@ A saved database query that you can use like a table. In Postgres, views skip
 [Row Level Security](#row-level-security-rls) by default unless you set them up
 otherwise.
 [Supabase: Row Level Security](https://supabase.com/docs/guides/database/postgres/row-level-security)
+
+## W
+
+### Workflow
+
+A file in `.github/workflows/` that tells GitHub Actions what to run and when, for example "on every pull request, install and test the app".
+[GitHub: About continuous integration](https://docs.github.com/en/actions/get-started/continuous-integration)
