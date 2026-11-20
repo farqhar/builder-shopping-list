@@ -10,6 +10,8 @@ changes your project without asking you first.
 | [`repo-protection-check`](repo-protection-check/SKILL.md) | Checks your GitHub repo's protection and security settings, explains each one in plain English, and offers to fix the gaps |
 | [`supabase-rls-check`](supabase-rls-check/SKILL.md) | Checks your Supabase database permissions (Row Level Security, policies, grants, views) and whether your secret key is exposed in browser code. Try it on the [broken example](../examples/supabase-broken-rls/) first |
 | [`auth-check`](auth-check/SKILL.md) | Checks how your app signs people in: Supabase Auth settings, how server code checks the user, where roles come from, and unsafe sign-in flows in web, mobile and extension code. Try it on the [misconfigured example](../examples/supabase-auth-misconfig/) first |
+| [`secrets-scan`](secrets-scan/SKILL.md) | Looks for leaked API keys, tokens and passwords in your code, `.env` files, browser variables, workflows and Git history, without ever printing them. Try it on the [leaky example](../examples/leaky-secrets/) first |
+| [`cost-trap-check`](cost-trap-check/SKILL.md) | Looks for ways your app could run up a surprise bill: paid AI, SMS or email calls with no limits, unbounded uploads and queries, and scheduled jobs. Try it on the [cost traps example](../examples/cost-traps/) first |
 
 ## Install
 
@@ -56,6 +58,18 @@ Your project's code, plus `supabase/config.toml` if you have one. Without
 it, the skill asks you to read a few settings from your Supabase dashboard.
 It asks what kind of app you're building, because an internal tool and a
 public app need different settings.
+
+### What `secrets-scan` needs
+
+Your project folder. It works best inside a Git repository, because it also
+checks which files are committed and searches your Git history. It never
+shows a secret's full value.
+
+### What `cost-trap-check` needs
+
+Your project's code, plus `supabase/config.toml` if you have one. It can't
+see your billing dashboards, so it asks whether you have spend caps and
+budget alerts.
 
 ### What `repo-protection-check` needs
 

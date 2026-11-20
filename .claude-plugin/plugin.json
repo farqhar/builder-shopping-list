@@ -1,6 +1,6 @@
 {
   "name": "builder-shopping-list",
-  "description": "Go-live audits for AI-built apps: repo protection, database permissions and more. Every skill checks and explains, and never changes anything without asking.",
+  "description": "Go-live audits for AI-built apps: repo protection, database permissions, sign-in, leaked secrets and cost traps. Every skill checks and explains, and never changes anything without asking.",
   "author": {
     "name": "Farquhar",
     "url": "https://github.com/farqhar"
@@ -8,5 +8,14 @@
   "homepage": "https://github.com/farqhar/builder-shopping-list",
   "repository": "https://github.com/farqhar/builder-shopping-list",
   "license": "MIT",
-  "keywords": ["security", "github", "branch-protection", "supabase", "beginner", "checklist"]
+  "keywords": [
+    "security",
+    "github",
+    "branch-protection",
+    "supabase",
+    "beginner",
+    "checklist",
+    "secrets",
+    "costs"
+  ]
 }

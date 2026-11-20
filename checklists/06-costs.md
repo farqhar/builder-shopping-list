@@ -17,6 +17,9 @@ costs you a bad day, not a bad year.
 2. **[Remember that an alert is not a cap](#set-budget-alerts-and-know-theyre-not-caps).** An email at 2am doesn't stop the meter.
 3. **[Rate-limit anything that costs you per use](#rate-limit-anything-that-costs-you-per-use).** SMS, email and AI calls are the classic runaway bills.
 
+The [`cost-trap-check`](../skills/cost-trap-check/SKILL.md) skill looks for
+these traps in your code and asks about your caps.
+
 ## Track your progress
 
 Copy this list into a GitHub issue in your own repo to get boxes you can tick.

@@ -57,7 +57,7 @@ Don't recognise a word? Look it up in the [glossary](glossary.md).
 | [04 CI/CD](checklists/04-ci-cd.md) | Automatic checks and deploys, preview versus production | ✅ Ready |
 | [05 Monitoring](checklists/05-monitoring.md) | Logs, error tracking, uptime alerts | ✅ Ready |
 | [06 Costs](checklists/06-costs.md) | Spending caps, usage alerts, surprise-bill traps | ✅ Ready |
-| [07 Privacy](checklists/07-privacy.md) | What personal data you collect, privacy policy basics | 🚧 In progress |
+| [07 Privacy](checklists/07-privacy.md) | What personal data you collect, privacy policy basics | ✅ Ready |
 | [08 Governance](checklists/08-governance.md) | Account ownership, access, branch protection, offboarding, incidents | ✅ Ready |
 
 | Guide | What it explains | Status |
@@ -70,6 +70,8 @@ Don't recognise a word? Look it up in the [glossary](glossary.md).
 | `supabase-rls-check` | Audits your Supabase database permissions and explains what to fix | ✅ Ready |
 | `repo-protection-check` | Audits your GitHub repo's branch protection and security settings, and offers to fix them | ✅ Ready |
 | `auth-check` | Audits your sign-in settings and code (Supabase Auth) and explains what to fix | ✅ Ready |
+| `secrets-scan` | Finds leaked keys and passwords in your code, `.env` files, workflows and Git history | ✅ Ready |
+| `cost-trap-check` | Finds ways your app could run up a surprise bill, and asks about your spend caps | ✅ Ready |
 
 ## This repo practises what it preaches
 

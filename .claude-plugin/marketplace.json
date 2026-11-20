@@ -9,7 +9,7 @@
     {
       "name": "builder-shopping-list",
       "source": "./",
-      "description": "Go-live audits for AI-built apps: repo protection, database permissions and more. Every skill checks and explains, and never changes anything without asking."
+      "description": "Go-live audits for AI-built apps: repo protection, database permissions, sign-in, leaked secrets and cost traps. Every skill checks and explains, and never changes anything without asking."
     }
   ]
 }
