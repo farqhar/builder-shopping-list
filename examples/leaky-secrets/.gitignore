@@ -1,0 +1,3 @@
+# DELIBERATELY INCOMPLETE EXAMPLE. A real project should also ignore .env files.
+node_modules/
+dist/
