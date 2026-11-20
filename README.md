@@ -56,7 +56,7 @@ Don't recognise a word? Look it up in the [glossary](glossary.md).
 | [03 Infrastructure](checklists/03-infrastructure.md) | Hosting, domains and DNS, email that actually arrives | 🚧 In progress |
 | [04 CI/CD](checklists/04-ci-cd.md) | Automatic checks and deploys, preview versus production | ✅ Ready |
 | [05 Monitoring](checklists/05-monitoring.md) | Logs, error tracking, uptime alerts | 🚧 In progress |
-| [06 Costs](checklists/06-costs.md) | Spending caps, usage alerts, surprise-bill traps | 🚧 In progress |
+| [06 Costs](checklists/06-costs.md) | Spending caps, usage alerts, surprise-bill traps | ✅ Ready |
 | [07 Privacy](checklists/07-privacy.md) | What personal data you collect, privacy policy basics | 🚧 In progress |
 | [08 Governance](checklists/08-governance.md) | Account ownership, access, branch protection, offboarding, incidents | ✅ Ready |
 

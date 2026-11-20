@@ -48,6 +48,11 @@ Deciding what a signed-in person (or program) is allowed to do, such as which ro
 A separate line of work in a Git repository. You make changes on a branch so the main version keeps working, then merge the branch back when it's ready.
 [GitHub flow](https://docs.github.com/en/get-started/using-github/github-flow)
 
+### Budget alert
+
+A notification (usually an email) when your spending passes an amount you set. It warns you, but on its own it doesn't stop the spending. Compare [spend cap](#spend-cap).
+[Google Cloud: Budgets and budget alerts](https://docs.cloud.google.com/billing/docs/how-to/budgets)
+
 ## C
 
 ### CD (continuous deployment)
@@ -307,6 +312,11 @@ blocks it before the secret reaches GitHub.
 
 ## R
 
+### Rate limiting
+
+Capping how often one user, device or bot can do something in a period of time, such as "5 password-reset texts per hour", to stop abuse and runaway costs.
+[OWASP API4:2023 Unrestricted Resource Consumption](https://api-security.owasp.org/editions/2023/en/0xa4-unrestricted-resource-consumption/)
+
 ### Relationship
 
 How rows in two tables connect: one-to-one (a user has one profile), one-to-many (a user has many orders) or many-to-many (orders and products, through a [join table](#join-table)).
@@ -381,6 +391,11 @@ Referring to an exact version of a GitHub Action by its full commit ID (a 40-cha
 Signing in to many apps with one company account, managed by an identity provider such as Okta or Microsoft Entra. Businesses often ask for it.
 [Supabase: SAML SSO](https://supabase.com/docs/guides/auth/enterprise-sso/auth-sso-saml)
 
+### Spend cap
+
+A setting that stops or limits a service when your usage reaches a set amount, instead of charging you for more. Caps often cover only some kinds of usage, so check which.
+[Supabase: Spend cap](https://supabase.com/docs/guides/platform/cost-control)
+
 ### SQL injection
 
 An attack where someone types SQL code into a form field, and a badly built
@@ -405,6 +420,11 @@ Where a database stores one kind of thing, such as products or orders, as rows a
 [Supabase: Tables and data](https://supabase.com/docs/guides/database/tables)
 
 ## U
+
+### Usage-based pricing
+
+Paying for how much you use (requests, storage, data transfer, AI tokens) rather than only a fixed monthly price, so your bill can grow with traffic, or with a bug.
+[Supabase: About billing](https://supabase.com/docs/guides/platform/billing-on-supabase)
 
 ### User enumeration
 
