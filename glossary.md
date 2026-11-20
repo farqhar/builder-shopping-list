@@ -70,6 +70,11 @@ Automatically checking every change (building, linting and testing it) as soon a
 A rule the database checks every time data is added or changed, such as "this can't be empty" (`not null`) or "quantity must be above zero" (`check`). It applies however the data arrives, which makes it stronger than a check in your app.
 [Postgres: Constraints](https://www.postgresql.org/docs/current/ddl-constraints.html)
 
+### Content Security Policy (CSP)
+
+A security header that tells the browser exactly which sources of scripts, styles and images your page may load, which blocks many injected-script attacks. Powerful, but takes care to set up.
+[MDN: Content Security Policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/CSP)
+
 ## D
 
 ### Deep link
@@ -94,6 +99,26 @@ holes in its dependencies.
 
 An access key attached to one GitHub repository, often used by servers to pull code. Whoever holds it keeps access even after they're removed from the organisation, so delete ones you can't explain.
 [GitHub: Repository roles](https://docs.github.com/en/organizations/managing-user-access-to-your-organizations-repositories/managing-repository-roles/repository-roles-for-an-organization)
+
+### DKIM
+
+DomainKeys Identified Mail: a digital signature added to your emails, checked against a DNS record, proving the message really came from your domain and wasn't changed.
+[DMARC.org: Overview](https://dmarc.org/overview/)
+
+### DMARC
+
+A DNS record that tells inboxes what to do with email claiming to be from your domain that fails SPF and DKIM checks (nothing, quarantine or reject), and where to send reports.
+[DMARC.org: Overview](https://dmarc.org/overview/)
+
+### DNS
+
+The Domain Name System: the internet's address book, which turns a name like `example.com` into the servers that host your site and receive your email.
+[Cloudflare: DNS docs](https://developers.cloudflare.com/dns/)
+
+### DNS record
+
+One entry in your domain's DNS settings, such as where the website lives (A or CNAME records) or which servers handle email (MX records). Email authentication (SPF, DKIM, DMARC) is also set with DNS records.
+[Vercel: Working with domains](https://vercel.com/docs/domains/working-with-domains)
 
 ### Domain registrar
 
@@ -164,6 +189,16 @@ original. When someone logs in, the system hashes what they typed and compares
 the results. Passwords should be stored hashed with a slow algorithm, never as
 plain text.
 [OWASP Password Storage Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html)
+
+### HSTS
+
+HTTP Strict Transport Security: a header that tells browsers to only ever use HTTPS for your site, even if someone types or clicks an `http://` link.
+[MDN: Strict-Transport-Security](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Strict-Transport-Security)
+
+### HTTPS
+
+The encrypted version of HTTP, shown by the padlock in the browser. It needs a certificate, which most hosts now set up and renew automatically.
+[Let's Encrypt: How it works](https://letsencrypt.org/how-it-works/)
 
 ## I
 
@@ -366,6 +401,11 @@ A GitHub feature that searches a repository's whole history, plus its issues
 and pull requests, for leaked secrets and raises an alert.
 [GitHub: Secret scanning](https://docs.github.com/en/code-security/concepts/secret-security/secret-scanning)
 
+### Security headers
+
+Extra instructions a website sends with each page (such as HSTS or `X-Content-Type-Options`) that tell the browser to apply stricter security rules.
+[OWASP: HTTP Headers Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/HTTP_Headers_Cheat_Sheet.html)
+
 ### Security policy
 
 A `SECURITY.md` file in a repository that tells people how to report a security problem privately.
@@ -391,10 +431,20 @@ Referring to an exact version of a GitHub Action by its full commit ID (a 40-cha
 Signing in to many apps with one company account, managed by an identity provider such as Okta or Microsoft Entra. Businesses often ask for it.
 [Supabase: SAML SSO](https://supabase.com/docs/guides/auth/enterprise-sso/auth-sso-saml)
 
+### SMTP
+
+Simple Mail Transfer Protocol: the standard way software sends email. "Custom SMTP" means connecting your app to your own email provider instead of a built-in test sender.
+[Supabase: Send emails with custom SMTP](https://supabase.com/docs/guides/auth/auth-smtp)
+
 ### Spend cap
 
 A setting that stops or limits a service when your usage reaches a set amount, instead of charging you for more. Caps often cover only some kinds of usage, so check which.
 [Supabase: Spend cap](https://supabase.com/docs/guides/platform/cost-control)
+
+### SPF
+
+Sender Policy Framework: a DNS record listing which servers are allowed to send email for your domain.
+[DMARC.org: Overview](https://dmarc.org/overview/)
 
 ### SQL injection
 
