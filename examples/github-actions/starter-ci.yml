@@ -1,0 +1,68 @@
+# Starter CI workflow: runs your project's checks on every pull request.
+#
+# HOW TO USE
+# 1. Copy this file into your own repo at .github/workflows/ci.yml
+#    (GitHub only runs workflows saved in .github/workflows/).
+# 2. Make sure your package.json has the scripts you want checked:
+#    "lint", "build" and/or "test". Any that are missing are skipped.
+# 3. Push. You'll see the check run on your next pull request.
+# 4. Once it's passing, make "checks" a required check on main
+#    (see examples/github-rulesets/ in this repo).
+#
+# This file is written for a Node.js project (most Lovable, Bolt, Vite and
+# Next.js apps are). Every line is commented so you can see what it does.
+
+# The name shown in the Actions tab and on pull requests.
+name: CI
+
+# When to run.
+on:
+  # On every pull request, so problems show up before you merge...
+  pull_request:
+  # ...and on every push to main, so you know main itself is healthy.
+  push:
+    branches: [main]
+
+# Read-only access to the code is all a check needs. If a step were ever
+# compromised, it couldn't change your repo.
+permissions:
+  contents: read
+
+jobs:
+  # "checks" is the job name. It's also the name you'll pick when you make
+  # this a required check.
+  checks:
+    # Run on a fresh Linux machine provided by GitHub.
+    runs-on: ubuntu-latest
+    steps:
+      # Download your code. The long code after "@" is an exact commit (SHA),
+      # so the action can't be swapped out from under you.
+      - name: Check out the repo
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          # Don't leave GitHub credentials on the machine.
+          persist-credentials: false
+
+      # Install Node.js, and cache downloaded packages so later runs are faster.
+      - name: Set up Node.js
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          # The current long-term-support version. Change it to match your app.
+          node-version: "lts/*"
+          # Cache packages based on package-lock.json.
+          cache: npm
+
+      # Install exactly the versions in package-lock.json (a clean, repeatable install).
+      - name: Install dependencies
+        run: npm ci
+
+      # Each step below runs a script from your package.json.
+      # "--if-present" means: skip quietly if the script doesn't exist.
+      - name: Lint
+        run: npm run lint --if-present
+
+      - name: Build
+        run: npm run build --if-present
+
+      - name: Test
+        run: npm test --if-present
