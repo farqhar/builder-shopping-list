@@ -45,7 +45,7 @@ A **[secret](../glossary.md#secret)** is anything that grants access: an
 - **What:** Store secrets in **[environment variables](../glossary.md#environment-variable)** (usually a `.env` file locally, and your host's settings in production), and list `.env` in your **[`.gitignore`](../glossary.md#gitignore)** so Git never uploads it.
 - **Why it matters:** Once a secret is in your Git history, anyone who can see the repo can find it, even after you delete the line.
 - **How to check:** Run `git ls-files | grep -i env`. It should list only `.env.example` (placeholder values like `sk_live_REPLACE_ME`), never `.env`. Note that `.gitignore` doesn't affect files Git already tracks: those need `git rm --cached .env`.
-- **Learn more:** [OWASP Secrets Management Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Secrets_Management_Cheat_Sheet.html) · [Git: gitignore](https://git-scm.com/docs/gitignore)
+- **Learn more:** [OWASP Secrets Management Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Secrets_Management_Cheat_Sheet.html) · [Git: gitignore](https://git-scm.com/docs/gitignore) · The [`secrets-scan`](../skills/secrets-scan/SKILL.md) skill checks this for you
 
 ### If a key leaks, rotate it first
 
