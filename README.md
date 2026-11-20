@@ -53,7 +53,7 @@ Don't recognise a word? Look it up in the [glossary](glossary.md).
 | [00 Before you start](checklists/00-before-you-start.md) | Git, repositories, keeping development separate from production | ✅ Ready |
 | [01 Security](checklists/01-security.md) | Logins, permissions and Row Level Security, secret keys, user input | ✅ Ready |
 | [02 Data](checklists/02-data.md) | Database structure, migrations, backups, testing a restore | ✅ Ready |
-| [03 Infrastructure](checklists/03-infrastructure.md) | Hosting, domains and DNS, email that actually arrives | 🚧 In progress |
+| [03 Infrastructure](checklists/03-infrastructure.md) | Hosting, domains and DNS, email that actually arrives | ✅ Ready |
 | [04 CI/CD](checklists/04-ci-cd.md) | Automatic checks and deploys, preview versus production | ✅ Ready |
 | [05 Monitoring](checklists/05-monitoring.md) | Logs, error tracking, uptime alerts | 🚧 In progress |
 | [06 Costs](checklists/06-costs.md) | Spending caps, usage alerts, surprise-bill traps | ✅ Ready |
