@@ -80,7 +80,19 @@ A rule the database checks every time data is added or changed, such as "this ca
 A security header that tells the browser exactly which sources of scripts, styles and images your page may load, which blocks many injected-script attacks. Powerful, but takes care to set up.
 [MDN: Content Security Policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/CSP)
 
+### Controller and processor
+
+GDPR terms. The controller decides why and how personal data is used (usually you, for your app). A processor handles personal data on the controller's behalf (for example, your database or email provider).
+
 ## D
+
+### Data minimisation
+
+Collecting only the personal data you actually need for a stated purpose, and deleting it when you no longer need it. A core principle of the GDPR.
+
+### Data processing agreement (DPA)
+
+A contract between a controller and a processor that sets out how the processor may handle personal data. Most services publish one; some apply it automatically through their terms.
 
 ### Deep link
 
@@ -309,6 +321,14 @@ as part of the command. This is the main defence against
 A passwordless sign-in that uses your fingerprint, face or device PIN, backed by a key stored on your device. Passkeys resist phishing.
 [FIDO Alliance: Passkeys](https://fidoalliance.org/passkeys/)
 
+### Personal data
+
+Any information about a person who can be identified, directly or indirectly: a name, an email address, a user ID, an IP address, location data. Data that swaps names for IDs is usually still personal data. See the [privacy checklist](checklists/07-privacy.md).
+
+### Personal data breach
+
+Personal data being lost, destroyed, changed, or seen by someone who shouldn't see it, whether by attack or by accident. Some breaches must be reported to a regulator within a deadline.
+
 ### PKCE
 
 Proof Key for Code Exchange: a one-time secret an app creates at the start of a sign-in, so an intercepted login code is useless to anyone else. Required for mobile apps using OAuth.
@@ -335,6 +355,10 @@ A temporary live copy of your app, built from a branch or pull request, with its
 
 A column whose value is unique for every row in a table, like a passport number for that row. Usually called `id`.
 [Supabase: Primary keys](https://supabase.com/docs/guides/database/tables#primary-keys)
+
+### Privacy notice
+
+The page that tells people what personal data you collect, why, how long you keep it and who you share it with. Often called a privacy policy.
 
 ### Publishable key
 
