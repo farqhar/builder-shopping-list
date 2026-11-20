@@ -42,7 +42,10 @@ English by a non-engineer who learned most of it the hard way.
    /plugin install builder-shopping-list --marketplace farqhar/builder-shopping-list
    ```
 
-   More options and usage are in [`skills/README.md`](skills/README.md).
+   Then ask _"Am I ready to launch?"_. The `ready-to-deploy` skill runs every
+   audit, walks your project through all nine checklists, and gives you one
+   verdict with your top five next steps. More options and usage are in
+   [`skills/README.md`](skills/README.md).
 
 Don't recognise a word? Look it up in the [glossary](glossary.md).
 
@@ -70,6 +73,7 @@ Don't recognise a word? Look it up in the [glossary](glossary.md).
 | `supabase-rls-check` | Audits your Supabase database permissions and explains what to fix | ✅ Ready |
 | `repo-protection-check` | Audits your GitHub repo's branch protection and security settings, and offers to fix them | ✅ Ready |
 | `auth-check` | Audits your sign-in settings and code (Supabase Auth) and explains what to fix | ✅ Ready |
+| `ready-to-deploy` | Runs every audit and checklist, then gives one go-live verdict and your top next steps | ✅ Ready |
 | `secrets-scan` | Finds leaked keys and passwords in your code, `.env` files, workflows and Git history | ✅ Ready |
 | `cost-trap-check` | Finds ways your app could run up a surprise bill, and asks about your spend caps | ✅ Ready |
 

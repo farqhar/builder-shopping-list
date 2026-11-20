@@ -1,6 +1,6 @@
 {
   "name": "builder-shopping-list",
-  "description": "Go-live audits for AI-built apps: repo protection, database permissions, sign-in, leaked secrets and cost traps. Every skill checks and explains, and never changes anything without asking.",
+  "description": "Go-live audits for AI-built apps: a full ready-to-deploy review, plus repo protection, database permissions, sign-in, leaked secrets and cost traps. Every skill checks and explains, and never changes anything without asking.",
   "author": {
     "name": "Farquhar",
     "url": "https://github.com/farqhar"
@@ -16,6 +16,7 @@
     "beginner",
     "checklist",
     "secrets",
-    "costs"
+    "costs",
+    "go-live"
   ]
 }
