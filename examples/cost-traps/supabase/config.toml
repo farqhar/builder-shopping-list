@@ -1,0 +1,10 @@
+# DELIBERATELY BROKEN EXAMPLE. Only the settings the skill reads are shown.
+
+[api]
+max_rows = 100000
+
+[storage]
+file_size_limit = "5GiB"
+
+[auth]
+enable_anonymous_sign_ins = true
