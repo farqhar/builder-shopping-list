@@ -17,6 +17,11 @@ One or two plain-English sentences. Add an everyday comparison if it helps.
 
 ## A
 
+### Alert
+
+An automatic message (email, text or chat) that tells a person something needs attention now, such as the app being down or errors spiking.
+[Google SRE book: Monitoring distributed systems](https://sre.google/sre-book/monitoring-distributed-systems/)
+
 ### API key
 
 A long string of characters that lets your app use another service, like a
@@ -140,6 +145,11 @@ of having the value written into the code. Locally they usually live in a
 secrets out of your code and lets the same code run with different settings.
 [Vite: Env variables](https://vite.dev/guide/env-and-mode)
 
+### Error tracking
+
+A service that automatically catches crashes and errors in your app, groups repeats together, and shows you the details needed to fix them.
+[Sentry: Product overview](https://docs.sentry.io/product/)
+
 ### Exposed schema
 
 A schema is a named group of tables in a database. In Supabase, an exposed
@@ -230,6 +240,11 @@ JSON Web Token: a signed digital pass that says who someone is and when the pass
 
 Giving each person, or program, only the access they need to do their job, and no more.
 [Supabase: Access control](https://supabase.com/docs/guides/platform/access-control)
+
+### Log
+
+A timestamped record of what an app or service did, such as requests, errors and sign-ins. Most services keep logs only for a limited time.
+[OWASP Logging Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Logging_Cheat_Sheet.html)
 
 ## M
 
@@ -462,6 +477,11 @@ A copy of your app and database that's set up like production but used only for 
 A pass or fail result shown on a pull request, usually from a CI workflow. Required status checks must pass before the pull request can be merged.
 [GitHub: Status checks](https://docs.github.com/en/pull-requests/reference/status-checks)
 
+### Status page
+
+A public page where a service reports outages and incidents. You can usually subscribe to updates.
+[Supabase status](https://status.supabase.com/)
+
 ## T
 
 ### Table
@@ -470,6 +490,11 @@ Where a database stores one kind of thing, such as products or orders, as rows a
 [Supabase: Tables and data](https://supabase.com/docs/guides/database/tables)
 
 ## U
+
+### Uptime monitoring
+
+Checking your app from the outside every few minutes, the way a user would, and alerting you if it stops responding. Also called black-box monitoring.
+[Google SRE book: Monitoring distributed systems](https://sre.google/sre-book/monitoring-distributed-systems/)
 
 ### Usage-based pricing
 
