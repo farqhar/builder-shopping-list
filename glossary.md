@@ -31,6 +31,11 @@ link, or a social login. (Deciding what that person is *allowed* to do is a
 separate job, handled by things like [policies](#policy).)
 [OWASP Authentication Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html)
 
+### Authorization
+
+Deciding what a signed-in person (or program) is allowed to do, such as which rows they can read. It's separate from [authentication](#authentication), which only checks who they are.
+[OWASP Authorization Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html)
+
 ## C
 
 ### Constraint
@@ -39,6 +44,11 @@ A rule the database checks every time data is added or changed, such as "this ca
 [Postgres: Constraints](https://www.postgresql.org/docs/current/ddl-constraints.html)
 
 ## D
+
+### Deep link
+
+A link that opens a specific screen inside a mobile app instead of a web page. Sign-in emails and social logins use deep links to bring people back into the app.
+[Supabase: Native mobile deep linking](https://supabase.com/docs/guides/auth/native-mobile-deep-linking)
 
 ### Dependabot
 
@@ -117,12 +127,27 @@ A lookup structure, like the index at the back of a book, that lets the database
 A table that sits between two others to link them many-to-many, for example `order_items` linking `orders` and `products`. Each row holds a foreign key to each side.
 [Supabase: Joining tables with foreign keys](https://supabase.com/docs/guides/database/tables#joining-tables-with-foreign-keys)
 
+### JWT
+
+JSON Web Token: a signed digital pass that says who someone is and when the pass expires. Supabase's access tokens are JWTs. Anyone can read one, but changing it breaks the signature.
+[Supabase: User sessions](https://supabase.com/docs/guides/auth/sessions)
+
 ## M
+
+### Magic link
+
+A sign-in link sent by email. Clicking it signs you in without a password. Supabase's magic links can only be used once.
+[Supabase: Magic links](https://supabase.com/docs/guides/auth/auth-magic-link)
 
 ### Migration
 
 A numbered SQL file that makes one change to your database structure, saved in Git so every change is recorded, reviewable and repeatable.
 [Supabase: Database migrations](https://supabase.com/docs/guides/deployment/database-migrations)
+
+### Model Context Protocol (MCP)
+
+An open standard for connecting AI agents to tools and data. A remote MCP server uses OAuth so a user can let an agent act for them without sharing their password.
+[MCP: Authorization](https://modelcontextprotocol.io/specification/latest/basic/authorization)
 
 ### Multi-factor authentication (MFA)
 
@@ -143,6 +168,13 @@ An app where several organisations (tenants) share the same database, and each m
 Organising tables so each fact is stored in one place, which avoids copies that drift out of sync.
 [Microsoft: Database normalization basics](https://learn.microsoft.com/en-us/previous-versions/troubleshoot/microsoft-365/microsoft-365-apps/access/database-normalization-description)
 
+## O
+
+### OAuth
+
+An open standard that lets someone grant an app access to their account somewhere else without sharing their password. It powers "Sign in with Google" buttons.
+[Supabase: Social login](https://supabase.com/docs/guides/auth/social-login)
+
 ## P
 
 ### Parameterized query
@@ -152,6 +184,16 @@ using placeholders. The database then always treats the input as data, never
 as part of the command. This is the main defence against
 [SQL injection](#sql-injection).
 [OWASP SQL Injection Prevention Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html)
+
+### Passkey
+
+A passwordless sign-in that uses your fingerprint, face or device PIN, backed by a key stored on your device. Passkeys resist phishing.
+[FIDO Alliance: Passkeys](https://fidoalliance.org/passkeys/)
+
+### PKCE
+
+Proof Key for Code Exchange: a one-time secret an app creates at the start of a sign-in, so an intercepted login code is useless to anyone else. Required for mobile apps using OAuth.
+[Supabase: PKCE flow](https://supabase.com/docs/guides/auth/sessions/pkce-flow)
 
 ### Point-in-time recovery (PITR)
 
@@ -229,6 +271,16 @@ key (`sb_secret_...`). Its older equivalent is the `service_role` key.
 A GitHub feature that searches a repository's whole history, plus its issues
 and pull requests, for leaked secrets and raises an alert.
 [GitHub: Secret scanning](https://docs.github.com/en/code-security/concepts/secret-security/secret-scanning)
+
+### Session
+
+How an app remembers you're signed in between pages and visits. In Supabase, a short-lived access token plus a refresh token that gets a new one.
+[Supabase: User sessions](https://supabase.com/docs/guides/auth/sessions)
+
+### Single sign-on (SSO)
+
+Signing in to many apps with one company account, managed by an identity provider such as Okta or Microsoft Entra. Businesses often ask for it.
+[Supabase: SAML SSO](https://supabase.com/docs/guides/auth/enterprise-sso/auth-sso-saml)
 
 ### SQL injection
 

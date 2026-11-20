@@ -1,0 +1,19 @@
+# DELIBERATELY MISCONFIGURED EXAMPLE. DO NOT COPY INTO A REAL PROJECT.
+# A pretend internal admin tool, where only invited staff should get in.
+# See ../EXPECTED-REPORT.md for the answers.
+
+project_id = "my-app"
+
+[auth]
+site_url = "https://my-app.example.com"
+additional_redirect_urls = ["https://my-app.example.com/**"]
+enable_signup = true
+enable_anonymous_sign_ins = false
+
+[auth.email]
+enable_confirmations = false
+otp_expiry = 86400
+
+[auth.mfa.totp]
+enroll_enabled = false
+verify_enabled = false
