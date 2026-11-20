@@ -58,7 +58,7 @@ Don't recognise a word? Look it up in the [glossary](glossary.md).
 | [05 Monitoring](checklists/05-monitoring.md) | Logs, error tracking, uptime alerts | 🚧 In progress |
 | [06 Costs](checklists/06-costs.md) | Spending caps, usage alerts, surprise-bill traps | 🚧 In progress |
 | [07 Privacy](checklists/07-privacy.md) | What personal data you collect, privacy policy basics | 🚧 In progress |
-| [08 Governance](checklists/08-governance.md) | Account ownership, access, branch protection, offboarding, incidents | 🚧 In progress |
+| [08 Governance](checklists/08-governance.md) | Account ownership, access, branch protection, offboarding, incidents | ✅ Ready |
 
 | Guide | What it explains | Status |
 | --- | --- | --- |
