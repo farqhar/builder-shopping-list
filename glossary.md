@@ -24,6 +24,11 @@ password for software. Some API keys are meant to be public and some must stay
 secret. See [publishable key](#publishable-key) and [secret key](#secret-key).
 [Supabase: API keys](https://supabase.com/docs/guides/getting-started/api-keys)
 
+### Audit log
+
+A record of who did what, and when, in a system: sign-ins, setting changes, deleted projects. It's what you check after a security scare.
+[GitHub: Reviewing your security log](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/reviewing-your-security-log)
+
 ### Authentication
 
 How an app checks who someone is, usually with an email and password, a magic
@@ -62,6 +67,16 @@ A package of someone else's code that your app relies on, for example a date
 library installed with `npm install`. Your app inherits any bugs or security
 holes in its dependencies.
 [GitHub: Dependabot alerts](https://docs.github.com/en/code-security/concepts/supply-chain-security/dependabot-alerts)
+
+### Deploy key
+
+An access key attached to one GitHub repository, often used by servers to pull code. Whoever holds it keeps access even after they're removed from the organisation, so delete ones you can't explain.
+[GitHub: Repository roles](https://docs.github.com/en/organizations/managing-user-access-to-your-organizations-repositories/managing-repository-roles/repository-roles-for-an-organization)
+
+### Domain registrar
+
+The company you bought your domain name from, and where its settings live. Whoever controls that account controls where your website and email point.
+[ICANN SSAC: SAC 044](https://itp.cdn.icann.org/en/files/security-and-stability-advisory-committee-ssac-reports/sac-044-en.pdf)
 
 ## E
 
@@ -115,6 +130,11 @@ plain text.
 
 ## I
 
+### Incident
+
+Anything that threatens your app's security or data, such as a leaked key, a hacked account or deleted data, and needs a response.
+[NCSC: Incident management](https://www.ncsc.gov.uk/collection/incident-management)
+
 ### Index
 
 A lookup structure, like the index at the back of a book, that lets the database find rows without reading the whole table. Postgres doesn't create one for foreign keys automatically.
@@ -131,6 +151,13 @@ A table that sits between two others to link them many-to-many, for example `ord
 
 JSON Web Token: a signed digital pass that says who someone is and when the pass expires. Supabase's access tokens are JWTs. Anyone can read one, but changing it breaks the signature.
 [Supabase: User sessions](https://supabase.com/docs/guides/auth/sessions)
+
+## L
+
+### Least privilege
+
+Giving each person, or program, only the access they need to do their job, and no more.
+[Supabase: Access control](https://supabase.com/docs/guides/platform/access-control)
 
 ## M
 
@@ -174,6 +201,11 @@ Organising tables so each fact is stored in one place, which avoids copies that 
 
 An open standard that lets someone grant an app access to their account somewhere else without sharing their password. It powers "Sign in with Google" buttons.
 [Supabase: Social login](https://supabase.com/docs/guides/auth/social-login)
+
+### Offboarding
+
+Removing someone's access to every account and system when they leave a team or finish a contract, and rotating any secrets they could see.
+[CIS Controls list](https://www.cisecurity.org/controls/cis-controls-list)
 
 ## P
 
@@ -271,6 +303,11 @@ key (`sb_secret_...`). Its older equivalent is the `service_role` key.
 A GitHub feature that searches a repository's whole history, plus its issues
 and pull requests, for leaked secrets and raises an alert.
 [GitHub: Secret scanning](https://docs.github.com/en/code-security/concepts/secret-security/secret-scanning)
+
+### Security policy
+
+A `SECURITY.md` file in a repository that tells people how to report a security problem privately.
+[GitHub: Adding a security policy](https://docs.github.com/en/code-security/how-tos/report-and-fix-vulnerabilities/configure-vulnerability-reporting/add-security-policy)
 
 ### Session
 
