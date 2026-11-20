@@ -24,6 +24,11 @@ password for software. Some API keys are meant to be public and some must stay
 secret. See [publishable key](#publishable-key) and [secret key](#secret-key).
 [Supabase: API keys](https://supabase.com/docs/guides/getting-started/api-keys)
 
+### Audit log
+
+A record of who did what, and when, in a system: sign-ins, setting changes, deleted projects. It's what you check after a security scare.
+[GitHub: Reviewing your security log](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/reviewing-your-security-log)
+
 ### Authentication
 
 How an app checks who someone is, usually with an email and password, a magic
@@ -35,6 +40,13 @@ separate job, handled by things like [policies](#policy).)
 
 Deciding what a signed-in person (or program) is allowed to do, such as which rows they can read. It's separate from [authentication](#authentication), which only checks who they are.
 [OWASP Authorization Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html)
+
+## B
+
+### Branch
+
+A separate line of work in a Git repository. You make changes on a branch so the main version keeps working, then merge the branch back when it's ready.
+[GitHub flow](https://docs.github.com/en/get-started/using-github/github-flow)
 
 ## C
 
@@ -63,7 +75,22 @@ library installed with `npm install`. Your app inherits any bugs or security
 holes in its dependencies.
 [GitHub: Dependabot alerts](https://docs.github.com/en/code-security/concepts/supply-chain-security/dependabot-alerts)
 
+### Deploy key
+
+An access key attached to one GitHub repository, often used by servers to pull code. Whoever holds it keeps access even after they're removed from the organisation, so delete ones you can't explain.
+[GitHub: Repository roles](https://docs.github.com/en/organizations/managing-user-access-to-your-organizations-repositories/managing-repository-roles/repository-roles-for-an-organization)
+
+### Domain registrar
+
+The company you bought your domain name from, and where its settings live. Whoever controls that account controls where your website and email point.
+[ICANN SSAC: SAC 044](https://itp.cdn.icann.org/en/files/security-and-stability-advisory-committee-ssac-reports/sac-044-en.pdf)
+
 ## E
+
+### Environment
+
+One running copy of your app with its own settings and data. Most apps have a development environment for building and testing, and a production environment that real users use.
+[Twelve-Factor: Dev/prod parity](https://12factor.net/dev-prod-parity)
 
 ### Environment variable
 
@@ -97,6 +124,11 @@ Secrets belong only in the backend.
 
 ## G
 
+### Git
+
+A version control system: it records every change to your project's files so you can see what changed, who changed it, and go back to an earlier version.
+[Git: About version control](https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control)
+
 ### .gitignore
 
 A file in your project that lists files and folders Git should never track,
@@ -115,6 +147,11 @@ plain text.
 
 ## I
 
+### Incident
+
+Anything that threatens your app's security or data, such as a leaked key, a hacked account or deleted data, and needs a response.
+[NCSC: Incident management](https://www.ncsc.gov.uk/collection/incident-management)
+
 ### Index
 
 A lookup structure, like the index at the back of a book, that lets the database find rows without reading the whole table. Postgres doesn't create one for foreign keys automatically.
@@ -131,6 +168,13 @@ A table that sits between two others to link them many-to-many, for example `ord
 
 JSON Web Token: a signed digital pass that says who someone is and when the pass expires. Supabase's access tokens are JWTs. Anyone can read one, but changing it breaks the signature.
 [Supabase: User sessions](https://supabase.com/docs/guides/auth/sessions)
+
+## L
+
+### Least privilege
+
+Giving each person, or program, only the access they need to do their job, and no more.
+[Supabase: Access control](https://supabase.com/docs/guides/platform/access-control)
 
 ## M
 
@@ -174,6 +218,11 @@ Organising tables so each fact is stored in one place, which avoids copies that 
 
 An open standard that lets someone grant an app access to their account somewhere else without sharing their password. It powers "Sign in with Google" buttons.
 [Supabase: Social login](https://supabase.com/docs/guides/auth/social-login)
+
+### Offboarding
+
+Removing someone's access to every account and system when they leave a team or finish a contract, and rotating any secrets they could see.
+[CIS Controls list](https://www.cisecurity.org/controls/cis-controls-list)
 
 ## P
 
@@ -219,6 +268,11 @@ what your permission rules (like [RLS policies](#policy)) allow. Supabase calls
 it the publishable key (`sb_publishable_...`). Its older equivalent is the
 `anon` key. [Supabase: API keys](https://supabase.com/docs/guides/getting-started/api-keys)
 
+### Pull request
+
+A request to merge the changes on one branch into another, usually `main`. It's where changes get reviewed and automatic checks run before they go in. Often shortened to PR.
+[GitHub flow](https://docs.github.com/en/get-started/using-github/github-flow)
+
 ### Push
 
 Sending the commits on your computer up to a shared copy of the repository,
@@ -237,6 +291,11 @@ blocks it before the secret reaches GitHub.
 
 How rows in two tables connect: one-to-one (a user has one profile), one-to-many (a user has many orders) or many-to-many (orders and products, through a [join table](#join-table)).
 [Supabase: Relationships between tables](https://supabase.com/docs/guides/database/tables#relationships-between-tables)
+
+### Repository
+
+A project's folder of files plus its full Git history, usually shared on a site like GitHub. Often shortened to repo.
+[GitHub: About repositories](https://docs.github.com/en/repositories/creating-and-managing-repositories/about-repositories)
 
 ### Rotate (a key)
 
@@ -271,6 +330,16 @@ key (`sb_secret_...`). Its older equivalent is the `service_role` key.
 A GitHub feature that searches a repository's whole history, plus its issues
 and pull requests, for leaked secrets and raises an alert.
 [GitHub: Secret scanning](https://docs.github.com/en/code-security/concepts/secret-security/secret-scanning)
+
+### Security policy
+
+A `SECURITY.md` file in a repository that tells people how to report a security problem privately.
+[GitHub: Adding a security policy](https://docs.github.com/en/code-security/how-tos/report-and-fix-vulnerabilities/configure-vulnerability-reporting/add-security-policy)
+
+### Seed data
+
+Made-up sample data used to fill a development or test database, so you never need real users' data to try things out.
+[Supabase: Seeding your database](https://supabase.com/docs/guides/local-development/seeding-your-database)
 
 ### Session
 
