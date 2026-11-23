@@ -25,4 +25,7 @@ exclude = [
   # "New issue" forms and Discussions need a signed-in user, or a repo
   # setting that may not be switched on yet.
   '^https://github\.com/farqhar/builder-shopping-list/(issues/new|discussions)',
+  # CHANGELOG.md links to release tags and version comparisons. Each one only
+  # exists once that version's GitHub Release is published.
+  '^https://github\.com/farqhar/builder-shopping-list/(releases/tag|compare)/',
 ]

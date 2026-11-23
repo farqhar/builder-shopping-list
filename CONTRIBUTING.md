@@ -109,6 +109,26 @@ Signing off is a promise, not a security check. It's different from
 cryptographically signed commits. See
 [GitHub: Managing the commit signoff policy](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/managing-repository-settings/managing-the-commit-signoff-policy-for-your-repository).
 
+## Releasing a new version
+
+This part is for the maintainer. The plugin has a version number in
+[`.claude-plugin/plugin.json`](.claude-plugin/plugin.json). Claude Code uses
+it to decide whether people who installed the plugin need an update, so **if
+a skill changes and the version doesn't, nobody gets the change.**
+
+1. Bump `version` in `.claude-plugin/plugin.json`. Use the rules at the top of
+   [CHANGELOG.md](CHANGELOG.md) to pick major, minor or patch.
+2. Move the notes under "Unreleased" in `CHANGELOG.md` into a new section
+   for the version, with today's date, and update the links at the bottom.
+3. Merge that pull request, then
+   [create a GitHub Release](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository)
+   with a tag like `v1.1.0`, and paste in that version's changelog section.
+
+Changes to checklists and guides alone don't need a new plugin version, but
+note them under "Unreleased" so the next release mentions them.
+
+Source: [Claude Code: Plugins reference, version management](https://code.claude.com/docs/en/plugins-reference#version-management)
+
 ## Code of Conduct
 
 Everyone taking part is expected to follow our
