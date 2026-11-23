@@ -101,8 +101,7 @@ is being the bridge between technical and non-technical people. These are field
 notes from someone a few steps ahead of you, not an expert's rulebook. That's
 why every item links to the people who actually wrote the rules.
 
-More of my work: [AI for Operators](https://github.com/farqhar/ai-for-operators) ·
-[LinkedIn](https://www.linkedin.com/in/REPLACE_ME)
+More of my work: [AI for Operators](https://github.com/farqhar/ai-for-operators)
 
 ## Community
 
