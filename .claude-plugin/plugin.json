@@ -1,5 +1,6 @@
 {
   "name": "builder-shopping-list",
+  "version": "1.0.0",
   "description": "Go-live audits for AI-built apps: a full ready-to-deploy review, plus repo protection, database permissions, sign-in, leaked secrets and cost traps. Every skill checks and explains, and never changes anything without asking.",
   "author": {
     "name": "Farquhar",
