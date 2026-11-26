@@ -38,7 +38,7 @@ jobs:
       # Step 2: run markdownlint over every .md file in the repo.
       # It reads its rules from .markdownlint-cli2.jsonc at the repo root.
       - name: Lint Markdown files
-        uses: DavidAnson/markdownlint-cli2-action@696eb3f2509270d7b882d2aa68347bc676e7af34 # v25.0.0
+        uses: DavidAnson/markdownlint-cli2-action@3ce8f712b5d8f31acd8e201be6d97e3d2bb23eb7 # v25.1.0
         with:
           # Which files to check. "**" means "in any folder".
           globs: "**/*.md"
